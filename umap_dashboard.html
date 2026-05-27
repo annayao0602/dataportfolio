@@ -20,7 +20,7 @@
             </h1>            
             <div class="nav-links right-links">
                 <a href="https://www.linkedin.com/in/anna-yao-6a4943259/" target="_blank">linkedin</a>
-                <a href="blog">blog</a>
+                <a href="#" id="theme-toggle">dark mode</a>
             </div>
         </nav>
     </header>
@@ -92,39 +92,7 @@
         <p><em>for inquiries: annayao0602@gmail.com</em></p>
     </footer>
 
-    <script>
-        const track = document.querySelector('.carousel-track');
-        const slides = Array.from(track.children);
-        const nextButton = document.querySelector('.carousel-btn.next');
-        const prevButton = document.querySelector('.carousel-btn.prev');
-        
-        const captionText = document.getElementById('caption-text');
-        
-        let currentIndex = 0;
+        <script src="script.js"></script>
 
-        const moveToSlide = (index) => {
-            track.style.transform = `translateX(-${index * 100}%)`;
-            currentIndex = index;
-            
-            const activeSlide = slides[index];
-            captionText.textContent = activeSlide.dataset.caption;
-        };
-
-        nextButton.addEventListener('click', e => {
-            if (currentIndex === slides.length - 1) {
-                moveToSlide(0); // Loop back to the beginning
-            } else {
-                moveToSlide(currentIndex + 1);
-            }
-        });
-
-        prevButton.addEventListener('click', e => {
-            if (currentIndex === 0) {
-                moveToSlide(slides.length - 1); // Loop to the end
-            } else {
-                moveToSlide(currentIndex - 1);
-            }
-        });
-    </script>
 </body>
 </html>

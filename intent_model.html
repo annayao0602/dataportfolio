@@ -20,7 +20,7 @@
             </h1>            
             <div class="nav-links right-links">
                 <a href="https://www.linkedin.com/in/anna-yao-6a4943259/" target="_blank">linkedin</a>
-                <a href="blog">blog</a>
+                <a href="#" id="theme-toggle">dark mode</a>
             </div>
         </nav>
     </header>
@@ -55,7 +55,7 @@
             <p class="detail-date">May 2026</p>
             
             <div class="detail-description">
-                <p>My final project for Data Science course "Data By Design." After writing this <a href="DS4024_final_project.pdf" target="_blank">paper</a> with another student on anthropomorphic AI and producing several solutions to improve explainability in modern machine learning models, this project acted as an extension of that idea where I attempted to examine how well a model could "understand" user intent. </p>
+                <p>My final project for Data Science course "Data By Design." After writing <a href="DS4024_final_project.pdf" target="_blank">this</a> paper with another student on anthropomorphic AI and producing several solutions to improve explainability in modern machine learning models, this project acted as an extension of that idea where I attempted to examine how well a model could "understand" user intent. </p>
                 <p>Using a document database, I stored 40,000+ documents which held user prompts and intents that were labeled and categorized for training the model in MongoDB. After using RoBERTaforSequenceClassification for multi-class classification, the F1 scores for each category were calculated. The model did exceptionally well on common intent categories, such as information extraction, but did poorly on rare ones due to class imbalance.</p>
                 <p>Find the complete project <a href="https://github.com/annayao0602/data-by-design-project-2/tree/main" target="_blank">here</a>.</p>
             
@@ -79,45 +79,7 @@
         <p><em>for inquiries: annayao0602@gmail.com</em></p>
     </footer>
 
-    <script>
-        const track = document.querySelector('.carousel-track');
-        const slides = Array.from(track.children);
-        const nextButton = document.querySelector('.carousel-btn.next');
-        const prevButton = document.querySelector('.carousel-btn.prev');
-        
-        // NEW: Select the caption text element
-        const captionText = document.getElementById('caption-text');
-        
-        let currentIndex = 0;
+       <script src="script.js"></script>
 
-        // Function to move to a specific slide AND update the caption
-        const moveToSlide = (index) => {
-            // Move the images
-            track.style.transform = `translateX(-${index * 100}%)`;
-            currentIndex = index;
-            
-            // NEW: Update the caption text based on the active slide's data attribute
-            const activeSlide = slides[index];
-            captionText.textContent = activeSlide.dataset.caption;
-        };
-
-        // Click Right
-        nextButton.addEventListener('click', e => {
-            if (currentIndex === slides.length - 1) {
-                moveToSlide(0); // Loop back to the beginning
-            } else {
-                moveToSlide(currentIndex + 1);
-            }
-        });
-
-        // Click Left
-        prevButton.addEventListener('click', e => {
-            if (currentIndex === 0) {
-                moveToSlide(slides.length - 1); // Loop to the end
-            } else {
-                moveToSlide(currentIndex - 1);
-            }
-        });
-    </script>
 </body>
 </html>

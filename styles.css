@@ -5,6 +5,11 @@
     --accent-hover: #B5A492;
     --font-serif: 'Playfair Display', serif;
     --font-sans: 'Inter', sans-serif;
+    --muted-text: #666666;
+    --border-color: rgba(0, 0, 0, 0.1);
+    --carousel-bg: rgba(250, 248, 242, 0.8);
+    --carousel-hover: white;
+    --carousel-arrow: var(--text-color);
 }
 
 html {
@@ -36,6 +41,24 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: background-color 0.4s ease, color 0.4s ease;
+
+}
+
+body.dark-theme {
+    --bg-color: #2b231d; 
+    
+    --text-color: #e6d5c3; 
+    
+    --accent-color: #8c735c; 
+    --accent-hover: #735e4a;
+    --muted-text: #a89f91; 
+    --border-color: rgba(252, 237, 220, 0.526);
+
+    --carousel-bg: rgba(230, 213, 195, 0.8); 
+    --carousel-hover: #e6d5c3;              
+    --carousel-arrow: #2b231d;
+
 }
 
 .back-to-top {
@@ -144,7 +167,7 @@ header {
     font-family: var(--font-serif);
     font-size: 1.2rem;
     margin-bottom: 3rem;
-    color: #666;
+    color: var(--muted-text);
 }
 
 .scroll-indicator {
@@ -224,9 +247,9 @@ header {
 
 footer {
     text-align: center;
-    padding: 4rem 0 2rem 0;
+    padding: 2rem 0 2rem 0;
     font-family: var(--font-serif);
-    border-top: 1px solid rgba(0,0,0,0.1);
+    border-top: 1px solid var(--border-color);
     margin-top: 4rem;
 }
 
@@ -246,7 +269,7 @@ footer {
     font-size: 1rem;
     font-style: italic;
     font-family: var(--font-serif);
-    color: #666;
+    color: var(--muted-text);
     margin-bottom: 4rem;
 }
 
@@ -295,7 +318,7 @@ footer {
 
 .project-date {
     font-size: 0.8rem;
-    color: #666;
+    color: var(--muted-text);
     margin-bottom: 1rem;
 }
 
@@ -379,7 +402,7 @@ footer {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(250, 248, 242, 0.8); /* Your warm background, slightly transparent */
+    background: var(--carousel-bg);
     border: none;
     cursor: pointer;
     border-radius: 50%;
@@ -388,13 +411,13 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: var(--text-color);
+color: var(--carousel-arrow);
     transition: background 0.2s ease, transform 0.2s ease;
     z-index: 10;
 }
 
 .carousel-btn:hover {
-    background: white;
+    background: var(--carousel-hover);
     transform: translateY(-50%) scale(1.1); /* Slight pop when hovered */
 }
 
@@ -414,10 +437,10 @@ footer {
 
 .detail-date {
     font-size: 0.9rem;
-    color: #666;
+    color: var(--muted-text);
     margin-bottom: 2rem;
     font-style: italic;
-    border-bottom: 1px solid rgba(0,0,0,0.1);
+    border-bottom: 1px solid var(--border-color); 
     padding-bottom: 0.5rem;
 }
 
@@ -472,6 +495,6 @@ footer {
     font-family: var(--font-serif);
     font-style: italic;
     font-size: 0.95rem;
-    color: #666;
+    color: var(--muted-text);
     transition: opacity 0.3s ease; /* Optional smooth fade */
 }
